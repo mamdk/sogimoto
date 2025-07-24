@@ -2,6 +2,8 @@ import {Request, Response, NextFunction} from 'express';
 import generateError from "../utils/generate_error";
 import getProduct from "../utils/get_product";
 import supabase from "../config/db";
+import reviewValidator from "../validator/review";
+import updateProductRating from "../utils/update_product_raating";
 
 export async function product(req: Request, res: Response, next: NextFunction) {
     try {
@@ -45,6 +47,32 @@ export async function reviews(req: Request, res: Response, next: NextFunction) {
             page: pageNumber,
             totalPages: Math.ceil((count || 0) / limitNumber),
         });
+    } catch (err) {
+        generateError(err.message, err.statusCode, err.code)
+    }
+}
+
+export async function createReview(req: Request, res: Response, next: NextFunction) {
+    try {
+        const { comment, rate, productId } = req.body;
+
+        const errors = await reviewValidator(req)
+        if(errors) {
+            return res.status(400).json({ errors });
+        }
+
+        const { data, error } = await supabase
+            .from('product_reviews')
+            .insert([{ product_id: productId, rate, text: comment }])
+            .select();
+
+        if (error) {
+            return generateError(error.message)
+        }
+
+        await updateProductRating(productId)
+
+        res.status(201).json(data[0]);
     } catch (err) {
         generateError(err.message, err.statusCode, err.code)
     }
