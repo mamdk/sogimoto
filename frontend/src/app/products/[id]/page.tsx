@@ -67,6 +67,7 @@ export default async function ProductPage({ params, searchParams }) {
                                 <p className="text-gray-700 whitespace-pre-line">{product.description}</p>
                             </div>
 
+                            {/*TODO: sizes and colors*/}
                             {/*<div className="flex space-x-3 rtl:space-x-reverse">*/}
                             {/*    <button className="flex-1 bg-indigo-600 hover:bg-indigo-700 text-white py-3 px-4 rounded-lg flex items-center justify-center transition-colors">*/}
                             {/*        <ShoppingCart className="w-5 h-5 ml-2" />*/}
@@ -76,8 +77,10 @@ export default async function ProductPage({ params, searchParams }) {
                         </div>
                     </div>
                 </div>
+                {/*TODO: ai*/}
 
                 <ReviewsList />
+                {/*TODO: ai*/}
 
                 <ReviewForm />
             </main>

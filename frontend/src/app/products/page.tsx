@@ -1,30 +1,42 @@
-import { notFound } from 'next/navigation';
+"use client"
+
+import {notFound, useSearchParams} from 'next/navigation';
 import apiClient from "src/utils/axios";
 import ProductCard from "src/components/ui/product_card";
 import Pagination from "src/components/ui/pagination";
+import useSWR from "swr";
+import Loading from "src/app/products/[id]/loading";
 
-export default async function ProductsPage({searchParams}) {
-    const {page} = await searchParams
+export default function ProductsPage() {
+    const searchParams = useSearchParams()
+    const page = searchParams.get('page')
 
-    const {data, statusText, status} = await apiClient(`/products${page > 1 ? `?page=${page}` : ''}`);
+    const { data: productsData, isLoading, error } = useSWR(
+        `/products${parseInt(page || '1', 10) > 1 ? `?page=${page}` : ''}`,
+        (url) => apiClient.get(url).then(res => res.data)
+    );
 
-    if (status !== 200 || statusText !== 'OK') {
-        notFound();
+    if(error) {
+        return notFound()
     }
 
-    // TODO: Loading
+    if(isLoading) {
+        return (<main className={'p-4 mb-4'}>
+            <Loading />
+        </main>)
+    }
 
     return (
         <main className={'p-4 mb-4'}>
             <h2 className={'mb-4 font-semibold text-lg text-gray-800'}>Products</h2>
 
             <div className={'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'}>
-                {data.products.map(product => <ProductCard key={product.id} product={product} />)}
+                {productsData.products.map(product => <ProductCard key={product.id} product={product} />)}
             </div>
 
 
             <div className={'flex justify-center align-center'}>
-                <Pagination totalPages={data.totalPages} currentPage={data.page} />
+                <Pagination totalPages={productsData.totalPages} currentPage={productsData.page} />
             </div>
         </main>
     );

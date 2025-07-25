@@ -13,7 +13,7 @@ export default function ReviewsList() {
     const page = searchParams.get('page')
 
     const { data: reviewsResponse, isLoading } = useSWR(
-        `/products/${id}/reviews${page > 1 ? `?page=${page}` : ''}`,
+        `/products/${id}/reviews${parseInt(page || '1', 10) > 1 ? `?page=${page}` : ''}`,
         (url) => apiClient.get(url).then(res => res.data)
     );
 
