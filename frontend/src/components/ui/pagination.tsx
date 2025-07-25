@@ -6,19 +6,24 @@ import { ArrowLeft, ArrowRight } from 'lucide-react';
 interface PaginationProps {
     totalPages: number;
     currentPage: number;
+    onChange?: (newPage: number) => void
 }
 
-export default function Pagination({ totalPages, currentPage }: PaginationProps) {
+export default function Pagination({ totalPages, currentPage, onChange }: PaginationProps) {
     const router = useRouter();
     const pathname = usePathname();
     const searchParams = useSearchParams();
 
-    const maxVisiblePages = 5;
+    const maxVisiblePages = 3;
 
     const changePage = (page: number) => {
         const params = new URLSearchParams(searchParams);
         params.set('page', page.toString());
-        router.push(`${pathname}?${params.toString()}`);
+        router.replace(`${pathname}?${params.toString()}`, { scroll: false });
+
+        if(onChange instanceof Function) {
+            onChange(page)
+        }
     };
 
     const getVisiblePages = () => {
