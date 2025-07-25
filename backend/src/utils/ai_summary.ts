@@ -30,7 +30,7 @@ async function summarizeWithAI(
                 {
                     role: "user",
                     content: mood === 'product' ?
-                        `Write a summary for me about a product with the following specifications. Just give the summary.:\n\n${product}`
+                        `Write a summary for me about a product with the following specifications. Just give the summary.:\n${product}`
                         :
                         `Write a summary for me about the following reviews and ratings related to a product with the specifications:\n${product}
                     .Just give the summary of the reviews, ratings, and your own purchase recommendation.\n\n${reviews}`,

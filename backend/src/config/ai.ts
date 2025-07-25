@@ -1,10 +1,10 @@
 import { OpenAI } from 'openai'
 import generateError from "../utils/generate_error";
+import * as console from "console";
 
-// TODO
-// if (!process.env.OPENAI_API_KEY) {
-//     generateError("OPENAI_API_KEY is not defined in .env file");
-// }
+if (!process.env.OPENAI_API_KEY) {
+    console.error("OPENAI_API_KEY is not defined in .env file");
+}
 
 export default new OpenAI({
     apiKey: process.env.OPENAI_API_KEY,

@@ -14,23 +14,40 @@ async function aiSummary(req, res) {
         }
 
         const product = await getProduct(productId)
+        delete product.id
+        delete product.image
+
         let summary = ''
 
         if(mood === 'product') {
             summary = await summarizeWithAI(product, null,'product')
         } else if(mood === 'reviews') {
-            const { data: reviewsData, error:reviewsError } = await supabase
-                .from('product_reviews')
-                .select('*')
-                .order('random()')
-                .eq('product_id', productId)
-                .limit(10);
+            const limit = 10
 
-            if (reviewsError) {
-                generateError(reviewsError.message)
+            const { data: reviewsIDs, error: reviewsIDsError } = await supabase
+                .from('product_reviews')
+                .select('id')
+                .eq('product_id', productId)
+
+            if (reviewsIDsError) {
+                generateError(reviewsIDsError.message)
             }
 
-            summary = await summarizeWithAI(product, reviewsData,'reviews')
+            if(reviewsIDs.length > 0) {
+                const selectedIDs = reviewsIDs.sort(() => Math.random() - 0.5).map(({id}) => id).slice(0, limit)
+
+                const { data: reviewsData, error: reviewsError } = await supabase
+                    .from('product_reviews')
+                    .select('*')
+                    .eq('product_id', productId)
+                    .in('id', selectedIDs)
+
+                if (reviewsError) {
+                    generateError(reviewsError.message)
+                }
+
+                summary = await summarizeWithAI(product, reviewsData,'reviews')
+            }
         }
 
         res.status(200).json({ productId, mood, summary });
