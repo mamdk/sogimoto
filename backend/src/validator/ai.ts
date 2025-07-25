@@ -1,4 +1,3 @@
-// src/validators/review.validator.ts
 import {body, validationResult} from 'express-validator';
 
 async function aiValidator(req) {
