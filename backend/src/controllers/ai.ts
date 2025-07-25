@@ -2,15 +2,15 @@ import generateError from "../utils/generate_error";
 import getProduct from "../utils/get_product";
 import supabase from '../config/db'
 import summarizeWithAI from "../utils/ai_summary";
-
-const moods = ['product', 'reviews']
+import aiValidator from "../validator/ai";
 
 async function aiSummary(req, res) {
     try {
         const { productId, mood } = req.body;
 
-        if(!productId || !mood || !moods.includes(mood)) {
-            generateError("Bad Request", 400, 'BAD_REQUEST')
+        const errors = await aiValidator(req)
+        if(errors) {
+            return res.status(400).json({ errors });
         }
 
         const product = await getProduct(productId)
