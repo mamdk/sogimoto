@@ -9,7 +9,7 @@
   "keywords": [],
   "author": "mhmk",
   "license": "ISC",
-  "description": "Challenge sogimoto - backend",
+  "description": "Challenge sugimoto - backend",
   "dependencies": {
     "@supabase/supabase-js": "^2.52.1",
     "body-parser": "^2.2.0",

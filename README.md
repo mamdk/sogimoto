@@ -1,2 +1,2 @@
-# sogimoto
+# sugimoto
 Challenge Full stack

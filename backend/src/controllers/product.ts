@@ -17,6 +17,39 @@ export async function product(req: Request, res: Response, next: NextFunction) {
     }
 }
 
+export async function products(req: Request, res: Response, next: NextFunction) {
+    try {
+        const { page = '1', limit = '10' } = req.query;
+
+        const pageNumber = parseInt(page as string, 10);
+        const limitNumber = parseInt(limit as string, 10);
+        const offset = (pageNumber - 1) * limitNumber;
+
+        const { data: products, error, count } = await supabase
+            .from('products')
+            .select('*', { count: 'exact' })
+            .range(offset, offset + limitNumber - 1)
+            .order('created_at', { ascending: false });
+
+        if (error) {
+            generateError(error.message)
+        }
+
+        if(!reviews) {
+            generateError('Not Found', 404, 'NOT_FOUND')
+        }
+
+        res.json({
+            products,
+            total: count,
+            page: pageNumber,
+            totalPages: Math.ceil((count || 0) / limitNumber),
+        });
+    } catch (err) {
+        generateError(err.message, err.statusCode, err.code)
+    }
+}
+
 export async function reviews(req: Request, res: Response, next: NextFunction) {
     try {
         const { id } = req.params;
