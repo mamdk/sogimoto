@@ -1,5 +1,4 @@
-// src/validators/review.validator.ts
-import {body, validationResult} from 'express-validator';
+import {body, param, validationResult} from 'express-validator';
 
 async function reviewValidator(req) {
     await body('comment')
@@ -8,12 +7,12 @@ async function reviewValidator(req) {
         .isLength({ min: 3 }).withMessage('Comment must be at least 3 characters')
         .run(req)
 
-    await body('rate')
-        .notEmpty().withMessage('Rate is required')
+    await body('rating')
+        .notEmpty().withMessage('Rating is required')
         .isFloat({ min: 1, max: 5 }).withMessage('Rate must be an float between 1 and 5')
         .run(req)
 
-    await body('productId')
+    await param('id')
         .notEmpty().withMessage('Product ID is required')
         .trim()
         .run(req)

@@ -54,7 +54,8 @@ export async function reviews(req: Request, res: Response, next: NextFunction) {
 
 export async function createReview(req: Request, res: Response, next: NextFunction) {
     try {
-        const { comment, rate, productId } = req.body;
+        const { comment, rating } = req.body;
+        const { id: productId } = req.params;
 
         const errors = await reviewValidator(req)
         if(errors) {
@@ -63,7 +64,7 @@ export async function createReview(req: Request, res: Response, next: NextFuncti
 
         const { data, error } = await supabase
             .from('product_reviews')
-            .insert([{ product_id: productId, rate, text: comment }])
+            .insert([{ product_id: productId, rating, text: comment }])
             .select();
 
         if (error) {
