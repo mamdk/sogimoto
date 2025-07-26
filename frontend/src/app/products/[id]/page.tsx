@@ -8,13 +8,14 @@ import Rating from "src/components/ui/rating";
 import AISummary from "src/components/ui/ai_summary";
 import EmptyState from "src/components/ui/empty_state";
 
-export default async function ProductPage({ params, searchParams }) {
+async function ProductPage({ params, searchParams }) {
     const { id } = await params;
     const {page} = await searchParams
 
-    const  { data: product, status: productStatus, statusText: productStatusText } = await apiClient(`/products/${id}`)
+    const  { data: product, status, statusText } = await apiClient(`/products/${id}`)
 
-    if (productStatus !== 200 || productStatusText !== 'OK') {
+    // TODO: fix errors
+    if (status !== 200 || statusText !== 'OK' || !product) {
         return <EmptyState />
     }
 
@@ -34,7 +35,14 @@ export default async function ProductPage({ params, searchParams }) {
                     <div className="md:flex">
                         <div className="md:w-1/2 p-6 border-b md:border-b-0 md:border-r border-gray-200">
                             <div className="relative aspect-square">
-                                <Image src={product.image} alt={product.title} fill className="object-contain" priority />
+                                <Image
+                                    src={product.image}
+                                    alt={product.title}
+                                    fill
+                                    sizes="(max-width: 768px) 100vw, 33vw"
+                                    className="object-contain"
+                                    priority
+                                />
                             </div>
                         </div>
 
@@ -78,3 +86,5 @@ export default async function ProductPage({ params, searchParams }) {
         </div>
     );
 }
+
+export default ProductPage

@@ -13,10 +13,12 @@ apiClient.interceptors.response.use(
 
             if (status === 404) {
                 console.error("Not Found!");
+            } else if (status === 400) {
+                console.error("Bad Request");
             } else if (status >= 500) {
                 console.error("Server Internal Error");
             } else {
-                console.error(`خطای نامشخص با کد ${status}:`, data);
+                console.error(`Error with status ${status}:`, data);
             }
         } else if (error.request) {
             console.error('Network Error!!');
@@ -24,7 +26,7 @@ apiClient.interceptors.response.use(
             console.error("Send Request Error", error.message);
         }
 
-        return Promise.reject(error);
+        return error;
     }
 );
 

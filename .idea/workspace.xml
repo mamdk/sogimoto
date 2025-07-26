@@ -4,21 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d8462981-24b7-4b4e-8c2d-89a5df75fa7f" name="Changes" comment="feat: AI summary component">
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/error.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/ui/empty_state.tsx" afterDir="false" />
+    <list default="true" id="d8462981-24b7-4b4e-8c2d-89a5df75fa7f" name="Changes" comment="fix: handle error in axios interceptor">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/app.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/app.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/products/[id]/loading.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/loading.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/error.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/error.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/products/[id]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/products/[id]/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/products/loading.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/products/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/products/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/section/reviews/form.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/section/reviews/form.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/section/reviews/list.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/section/reviews/list.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/ui/pagination.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ui/pagination.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/ui/product_card.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ui/product_card.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/utils/axios.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/utils/axios.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -73,7 +62,7 @@
       <option name="presentableId" value="Default" />
       <updated>1753483367031</updated>
       <workItem from="1753483368089" duration="890000" />
-      <workItem from="1753522144581" duration="8160000" />
+      <workItem from="1753522144581" duration="10719000" />
     </task>
     <task id="LOCAL-00001" summary="feat: review list">
       <option name="closed" value="true" />
@@ -107,7 +96,39 @@
       <option name="project" value="LOCAL" />
       <updated>1753529176385</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="fix: exports and delete extra files">
+      <option name="closed" value="true" />
+      <created>1753532097534</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1753532097534</updated>
+    </task>
+    <task id="LOCAL-00006" summary="feat: empty state page">
+      <option name="closed" value="true" />
+      <created>1753532112775</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1753532112775</updated>
+    </task>
+    <task id="LOCAL-00007" summary="feat: error page">
+      <option name="closed" value="true" />
+      <created>1753532126080</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1753532126080</updated>
+    </task>
+    <task id="LOCAL-00008" summary="fix: handle error in axios interceptor">
+      <option name="closed" value="true" />
+      <created>1753532163793</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1753532163793</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -118,6 +139,10 @@
     <MESSAGE value="fix: products page loading" />
     <MESSAGE value="fix: Rating component" />
     <MESSAGE value="feat: AI summary component" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: AI summary component" />
+    <MESSAGE value="fix: exports and delete extra files" />
+    <MESSAGE value="feat: empty state page" />
+    <MESSAGE value="feat: error page" />
+    <MESSAGE value="fix: handle error in axios interceptor" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: handle error in axios interceptor" />
   </component>
 </project>

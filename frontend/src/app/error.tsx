@@ -4,15 +4,13 @@ import { AlertTriangle, Home, RefreshCw } from 'lucide-react';
 import Link from 'next/link';
 
 interface ErrorPageProps {
-    errorCode?: number;
     title?: string;
     description?: string;
 }
 
 function ErrorPage({
-  errorCode = 500,
-  title = 'Error',
-  description = 'Unfortunately, there was a problem processing your request.',
+    title = 'Error',
+    description = 'Unfortunately, there was a problem processing your request.',
 }: ErrorPageProps) {
     return (
         <div className="min-h-screen flex justify-center items-start p-4 sm:items-center">
