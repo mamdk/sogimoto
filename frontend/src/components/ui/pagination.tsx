@@ -9,7 +9,7 @@ interface PaginationProps {
     onChange?: (newPage: number) => void
 }
 
-export default function Pagination({ totalPages, currentPage, onChange }: PaginationProps) {
+function Pagination({ totalPages, currentPage, onChange }: PaginationProps) {
     const router = useRouter();
     const pathname = usePathname();
     const searchParams = useSearchParams();
@@ -75,3 +75,5 @@ export default function Pagination({ totalPages, currentPage, onChange }: Pagina
         </div>
     );
 }
+
+export default Pagination

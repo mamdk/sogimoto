@@ -1,14 +1,13 @@
 "use client";
 
-import { Star, StarHalf } from 'lucide-react';
 import Pagination from "src/components/ui/pagination";
 import apiClient from "src/utils/axios";
 import useSWR from "swr";
 import {useParams, useSearchParams} from "next/navigation";
-import Loading from "src/app/products/[id]/loading";
+import Loading from "src/app/loading";
 import Rating from "src/components/ui/rating";
 
-export default function ReviewsList() {
+function ReviewsList() {
     const {id} = useParams()
     const searchParams = useSearchParams()
     const page = searchParams.get('page')
@@ -58,3 +57,5 @@ export default function ReviewsList() {
             </section>
     );
 }
+
+export default ReviewsList

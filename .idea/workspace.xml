@@ -4,11 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d8462981-24b7-4b4e-8c2d-89a5df75fa7f" name="Changes" comment="fix: Rating component">
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/ui/ai_summary.tsx" afterDir="false" />
+    <list default="true" id="d8462981-24b7-4b4e-8c2d-89a5df75fa7f" name="Changes" comment="feat: AI summary component">
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/error.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/ui/empty_state.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/app.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/app.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/products/[id]/loading.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/loading.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/products/[id]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/products/[id]/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/products/loading.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/products/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/products/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/section/reviews/form.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/section/reviews/form.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/section/reviews/list.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/section/reviews/list.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/ui/pagination.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ui/pagination.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/ui/product_card.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ui/product_card.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/utils/axios.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/utils/axios.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,6 +59,11 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/frontend/src/app" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -57,7 +73,7 @@
       <option name="presentableId" value="Default" />
       <updated>1753483367031</updated>
       <workItem from="1753483368089" duration="890000" />
-      <workItem from="1753522144581" duration="5269000" />
+      <workItem from="1753522144581" duration="8160000" />
     </task>
     <task id="LOCAL-00001" summary="feat: review list">
       <option name="closed" value="true" />
@@ -83,7 +99,15 @@
       <option name="project" value="LOCAL" />
       <updated>1753522816370</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="feat: AI summary component">
+      <option name="closed" value="true" />
+      <created>1753529176385</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1753529176385</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -93,6 +117,7 @@
     <MESSAGE value="feat: review list" />
     <MESSAGE value="fix: products page loading" />
     <MESSAGE value="fix: Rating component" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: Rating component" />
+    <MESSAGE value="feat: AI summary component" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: AI summary component" />
   </component>
 </project>

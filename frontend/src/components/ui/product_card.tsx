@@ -13,7 +13,7 @@ interface Product {
     created_at: Date;
 }
 
-export default function ProductCard({ product }: { product: Product }) {
+function ProductCard({ product }: { product: Product }) {
     return (
         <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
             <div className="md:flex">
@@ -24,7 +24,7 @@ export default function ProductCard({ product }: { product: Product }) {
                         fill
                         className="object-contain p-4"
                         sizes="(max-width: 768px) 100vw, 33vw"
-                        priority={false}
+                        priority
                     />
                     <span className="absolute top-2 left-2 bg-indigo-600/90 text-white text-xs px-2 py-1 rounded-md backdrop-blur-sm">
 						{product.category}
@@ -73,3 +73,5 @@ export default function ProductCard({ product }: { product: Product }) {
         </div>
     );
 }
+
+export default ProductCard

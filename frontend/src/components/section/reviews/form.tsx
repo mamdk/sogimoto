@@ -24,7 +24,7 @@ const reviewSchema = yup.object({
     comment: yup.string().required(),
 });
 
-export default function ReviewForm() {
+function ReviewForm() {
     const {id: productId} = useParams()
 
     const {
@@ -86,3 +86,5 @@ export default function ReviewForm() {
 
     );
 }
+
+export default ReviewForm
