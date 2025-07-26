@@ -5,6 +5,7 @@ import { Star, ChevronLeft } from 'lucide-react';
 import Image from "next/image";
 import ReviewsList from "src/components/section/reviews/list";
 import ReviewForm from "src/components/section/reviews/form";
+import Rating from "src/components/ui/rating";
 
 export default async function ProductPage({ params, searchParams }) {
     const { id } = await params;
@@ -46,16 +47,7 @@ export default async function ProductPage({ params, searchParams }) {
 
                             <h1 className="text-2xl font-bold text-gray-900 mb-2">{product.title}</h1>
                             <div className="flex items-center mb-6">
-                                <div className="flex">
-                                    {[...Array(5)].map((_, i) => (
-                                        <Star
-                                            key={i}
-                                            className={`w-5 h-5 ${
-                                                i < Math.floor(product.rating) ? 'text-yellow-400 fill-yellow-400' : 'text-gray-300'
-                                            }`}
-                                        />
-                                    ))}
-                                </div>
+                                <Rating rating={product.rating} showScore={false}/>
                                 <span className="text-sm text-gray-500 ml-2">({product.count.toLocaleString()})</span>
                             </div>
 

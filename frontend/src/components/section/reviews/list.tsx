@@ -6,6 +6,7 @@ import apiClient from "src/utils/axios";
 import useSWR from "swr";
 import {useParams, useSearchParams} from "next/navigation";
 import Loading from "src/app/products/[id]/loading";
+import Rating from "src/components/ui/rating";
 
 export default function ReviewsList() {
     const {id} = useParams()
@@ -38,26 +39,7 @@ export default function ReviewsList() {
                             {reviewsResponse.reviews.map((review) => (
                                 <div key={review.id} className="border-b border-gray-100 pb-6 last:border-0">
                                     <div className="flex justify-between items-center mb-3">
-                                        <div className="flex items-center">
-                                            {[...Array(5)].map((_, i) => {
-                                                const starValue = i + 1;
-                                                return (
-                                                    <span key={i}>
-												{review.rating >= starValue ? (
-                                                    <Star className="w-5 h-5 text-yellow-400 fill-yellow-400" />
-                                                ) : review.rating >= starValue - 0.5 ? (
-                                                    <div className={'relative'}>
-                                                        <StarHalf className="absolute w-5 h-5 text-yellow-400 fill-yellow-400" />
-                                                        <Star className="w-5 h-5 text-gray-300" />
-                                                    </div>
-                                                ) : (
-                                                    <Star className="w-5 h-5 text-gray-300" />
-                                                )}
-											</span>
-                                                );
-                                            })}
-                                            <span className={'text-gray-500 ml-2 text-sm'}>{review.rating}</span>
-                                        </div>
+                                        <Rating rating={review.rating} />
                                         <span className="text-sm text-gray-500">{new Date(review.created_at).toLocaleDateString()}</span>
                                     </div>
                                     <p className="text-gray-700 whitespace-pre-line">{review.text}</p>

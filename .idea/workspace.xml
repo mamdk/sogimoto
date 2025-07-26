@@ -4,11 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d8462981-24b7-4b4e-8c2d-89a5df75fa7f" name="Changes" comment="feat: review list">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="d8462981-24b7-4b4e-8c2d-89a5df75fa7f" name="Changes" comment="fix: products page loading">
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/ui/rating.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/products/[id]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/products/[id]/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/products/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/products/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/section/reviews/list.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/section/reviews/list.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/tsconfig.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,13 +39,13 @@
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.standard": "true",
     "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.eslint": "",
     "node.js.selected.package.standard": "",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_interpreter_path": "/home/mhmk/.nvm/versions/node/v22.13.1/bin/node",
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "settings.nodejs",
-    "ts.external.directory.path": "/home/mhmk/projects/hiring/sogimoto/frontend/node_modules/typescript/lib",
+    "ts.external.directory.path": "/home/mhmk/projects/hiring/sogimoto/backend/node_modules/typescript/lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -56,7 +57,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1753483367031</updated>
-      <workItem from="1753483368089" duration="749000" />
+      <workItem from="1753483368089" duration="890000" />
+      <workItem from="1753522144581" duration="634000" />
     </task>
     <task id="LOCAL-00001" summary="feat: review list">
       <option name="closed" value="true" />
@@ -66,7 +68,15 @@
       <option name="project" value="LOCAL" />
       <updated>1753483431275</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="fix: products page loading">
+      <option name="closed" value="true" />
+      <created>1753484318196</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1753484318196</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -74,6 +84,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="feat: review list" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: review list" />
+    <MESSAGE value="fix: products page loading" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: products page loading" />
   </component>
 </project>
