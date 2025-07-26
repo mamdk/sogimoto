@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import Header from 'src/components/section/header';
+import {AuthProvider} from "src/context/auth";
 
 export const metadata: Metadata = {
     title: 'Sugimoto Challenge',
@@ -11,8 +12,10 @@ function RootLayout({ children }) {
     return (
         <html lang="en">
             <body>
-                <Header />
-                {children}
+                <AuthProvider>
+                    <Header />
+                    {children}
+                </AuthProvider>
             </body>
         </html>
     );
