@@ -1,4 +1,3 @@
-import { notFound } from 'next/navigation';
 import apiClient from 'src/utils/axios';
 import Link from 'next/link';
 import { Star, ChevronLeft } from 'lucide-react';
@@ -7,17 +6,16 @@ import ReviewsList from "src/components/section/reviews/list";
 import ReviewForm from "src/components/section/reviews/form";
 import Rating from "src/components/ui/rating";
 import AISummary from "src/components/ui/ai_summary";
+import EmptyState from "src/components/ui/empty_state";
 
 export default async function ProductPage({ params, searchParams }) {
     const { id } = await params;
     const {page} = await searchParams
 
-    const productResponse = await apiClient(`/products/${id}`)
-
-    const { data: product, status: productStatus, statusText: productStatusText } = productResponse;
+    const  { data: product, status: productStatus, statusText: productStatusText } = await apiClient(`/products/${id}`)
 
     if (productStatus !== 200 || productStatusText !== 'OK') {
-        notFound();
+        return <EmptyState />
     }
 
     return (

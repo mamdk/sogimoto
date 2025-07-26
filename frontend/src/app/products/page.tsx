@@ -5,9 +5,10 @@ import apiClient from "src/utils/axios";
 import ProductCard from "src/components/ui/product_card";
 import Pagination from "src/components/ui/pagination";
 import useSWR from "swr";
-import Loading from "src/app/products/[id]/loading";
+import Loading from "src/app/loading";
+import EmptyState from "src/components/ui/empty_state";
 
-export default function ProductsPage() {
+function ProductsPage() {
     const searchParams = useSearchParams()
     const page = searchParams.get('page')
 
@@ -16,14 +17,16 @@ export default function ProductsPage() {
         (url) => apiClient.get(url).then(res => res.data)
     );
 
-    if(error) {
-        return notFound()
+    if(error || productsData?.total === 0) {
+        return <EmptyState description={error ? 'Unfortunately, there was a problem processing your request.' : undefined} />
     }
 
     if(isLoading) {
-        return (<main className={'p-4 mb-4'}>
-            <Loading />
-        </main>)
+        return (
+            <main className={'p-4 mb-4'}>
+                <Loading />
+            </main>
+        )
     }
 
     return (
@@ -41,3 +44,5 @@ export default function ProductsPage() {
         </main>
     );
 }
+
+export default ProductsPage
