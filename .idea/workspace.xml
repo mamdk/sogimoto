@@ -4,11 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d8462981-24b7-4b4e-8c2d-89a5df75fa7f" name="Changes" comment="fix: handle error in axios interceptor">
+    <list default="true" id="d8462981-24b7-4b4e-8c2d-89a5df75fa7f" name="Changes" comment="fix: handle errors">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/error.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/error.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/controllers/product.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/controllers/product.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/utils/ai_summary.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/utils/ai_summary.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/products/[id]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/products/[id]/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/utils/axios.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/utils/axios.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/products/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/products/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/section/reviews/form.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/section/reviews/form.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/section/reviews/list.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/section/reviews/list.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/ui/ai_summary.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ui/ai_summary.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,10 +39,11 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/home/mhmk/projects/hoshma/hoshma-api",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.standard": "true",
     "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "",
+    "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.standard": "",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_interpreter_path": "/home/mhmk/.nvm/versions/node/v22.13.1/bin/node",
@@ -62,7 +67,8 @@
       <option name="presentableId" value="Default" />
       <updated>1753483367031</updated>
       <workItem from="1753483368089" duration="890000" />
-      <workItem from="1753522144581" duration="10719000" />
+      <workItem from="1753522144581" duration="11698000" />
+      <workItem from="1753550455923" duration="7152000" />
     </task>
     <task id="LOCAL-00001" summary="feat: review list">
       <option name="closed" value="true" />
@@ -128,7 +134,15 @@
       <option name="project" value="LOCAL" />
       <updated>1753532163793</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="fix: handle errors">
+      <option name="closed" value="true" />
+      <created>1753537032041</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1753537032041</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -143,6 +157,7 @@
     <MESSAGE value="feat: empty state page" />
     <MESSAGE value="feat: error page" />
     <MESSAGE value="fix: handle error in axios interceptor" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: handle error in axios interceptor" />
+    <MESSAGE value="fix: handle errors" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: handle errors" />
   </component>
 </project>

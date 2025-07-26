@@ -1,22 +1,25 @@
 import apiClient from 'src/utils/axios';
 import Link from 'next/link';
-import { Star, ChevronLeft } from 'lucide-react';
+import { ChevronLeft } from 'lucide-react';
 import Image from "next/image";
 import ReviewsList from "src/components/section/reviews/list";
 import ReviewForm from "src/components/section/reviews/form";
 import Rating from "src/components/ui/rating";
 import AISummary from "src/components/ui/ai_summary";
 import EmptyState from "src/components/ui/empty_state";
+import Error from "src/app/error";
 
-async function ProductPage({ params, searchParams }) {
+async function ProductPage({ params }) {
     const { id } = await params;
-    const {page} = await searchParams
 
-    const  { data: product, status, statusText } = await apiClient(`/products/${id}`)
+    const  { data: product, status } = await apiClient(`/products/${id}`)
 
-    // TODO: fix errors
-    if (status !== 200 || statusText !== 'OK' || !product) {
+    if (status === 404) {
         return <EmptyState />
+    }
+
+    if(status !== 200) {
+        return <Error />
     }
 
     return (
@@ -79,7 +82,6 @@ async function ProductPage({ params, searchParams }) {
                 <AISummary mood={'product'} />
 
                 <ReviewsList />
-                <AISummary mood={'reviews'} />
 
                 <ReviewForm />
             </main>

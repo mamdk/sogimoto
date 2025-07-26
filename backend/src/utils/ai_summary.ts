@@ -47,7 +47,7 @@ async function summarizeWithAI(
 
         return summary;
     } catch (err) {
-        generateError(err)
+        generateError('No summary was generated')
     }
 }
 

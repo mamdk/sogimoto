@@ -7,19 +7,16 @@ import Pagination from "src/components/ui/pagination";
 import useSWR from "swr";
 import Loading from "src/app/loading";
 import EmptyState from "src/components/ui/empty_state";
+import Error from "src/app/error";
 
 function ProductsPage() {
     const searchParams = useSearchParams()
     const page = searchParams.get('page')
 
-    const { data: productsData, isLoading, error } = useSWR(
-        `/products${parseInt(page || '1', 10) > 1 ? `?page=${page}` : ''}`,
-        (url) => apiClient.get(url).then(res => res.data)
+    const { data, isLoading, error } = useSWR(
+        `/products${(parseInt(page, 10) || 1) > 1 ? `?page=${page}` : ''}`,
+        (url) => apiClient.get(url)
     );
-
-    if(error || productsData?.total === 0) {
-        return <EmptyState description={error ? 'Unfortunately, there was a problem processing your request.' : undefined} />
-    }
 
     if(isLoading) {
         return (
@@ -28,6 +25,16 @@ function ProductsPage() {
             </main>
         )
     }
+
+    if(data.status === 404) {
+        return <EmptyState />
+    }
+
+    if(error || data.status !== 200) {
+        return <Error />
+    }
+
+    const productsData = data.data
 
     return (
         <main className={'p-4 mb-4'}>

@@ -11,7 +11,7 @@ export async function product(req: Request, res: Response, next: NextFunction) {
 
         const data  = await getProduct(id)
 
-        res.json(data);
+        res.status(200).json(data);
     } catch (err) {
         generateError(err.message, err.statusCode, err.code)
     }
@@ -25,21 +25,21 @@ export async function products(req: Request, res: Response, next: NextFunction) 
         const limitNumber = parseInt(limit as string, 10);
         const offset = (pageNumber - 1) * limitNumber;
 
+        if(isNaN(pageNumber) || isNaN(limitNumber)) {
+            generateError('Bad Request', 400, 'BAD_REQUEST')
+        }
+
         const { data: products, error, count } = await supabase
             .from('products')
             .select('*', { count: 'exact' })
             .range(offset, offset + limitNumber - 1)
             .order('created_at', { ascending: false });
 
-        if (error) {
-            generateError(error.message)
+        if (error || !products) {
+            generateError(error.message, 404, 'NOT_FOUND')
         }
 
-        if(!reviews) {
-            generateError('Not Found', 404, 'NOT_FOUND')
-        }
-
-        res.json({
+        res.status(200).json({
             products,
             total: count,
             page: pageNumber,
@@ -59,6 +59,10 @@ export async function reviews(req: Request, res: Response, next: NextFunction) {
         const limitNumber = parseInt(limit as string, 10);
         const offset = (pageNumber - 1) * limitNumber;
 
+        if(isNaN(pageNumber) || isNaN(limitNumber)) {
+            generateError('Bad Request', 400, 'BAD_REQUEST')
+        }
+
         const { data: reviews, error, count } = await supabase
             .from('product_reviews')
             .select('*', { count: 'exact' })
@@ -66,15 +70,11 @@ export async function reviews(req: Request, res: Response, next: NextFunction) {
             .range(offset, offset + limitNumber - 1)
             .order('created_at', { ascending: false });
 
-        if (error) {
-            generateError(error.message)
-        }
-
-        if(!reviews) {
+        if(error || !reviews) {
             generateError('Not Found', 404, 'NOT_FOUND')
         }
 
-        res.json({
+        res.status(200).json({
             reviews,
             total: count,
             page: pageNumber,

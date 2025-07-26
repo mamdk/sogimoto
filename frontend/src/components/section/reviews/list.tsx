@@ -6,22 +6,43 @@ import useSWR from "swr";
 import {useParams, useSearchParams} from "next/navigation";
 import Loading from "src/app/loading";
 import Rating from "src/components/ui/rating";
+import EmptyState from "src/components/ui/empty_state";
+import Error from "src/app/error";
+import AISummary from "src/components/ui/ai_summary";
 
 function ReviewsList() {
     const {id} = useParams()
     const searchParams = useSearchParams()
     const page = searchParams.get('page')
 
-    const { data: reviewsResponse, isLoading } = useSWR(
-        `/products/${id}/reviews${parseInt(page || '1', 10) > 1 ? `?page=${page}` : ''}`,
-        (url) => apiClient.get(url).then(res => res.data)
+    const { data , isLoading, error } = useSWR(
+        `/products/${id}/reviews${(parseInt(page, 10) || 1) > 1 ? `?page=${page}` : ''}`,
+        (url) => apiClient.get(url)
     );
 
     if(isLoading) {
-        return (<section className="mt-12 bg-white rounded-xl shadow-md p-6">
-            <Loading />
-        </section>)
+        return (
+            <section className="mt-12 bg-white rounded-xl shadow-md p-6">
+                <div className="flex align-center border-b border-gray-200 pb-2 mb-4">
+                    <h2 className="text-xl font-bold text-gray-900">Reviews</h2>
+                </div>
+                <Loading />
+            </section>
+        )
     }
+
+    if(error || data.status !== 200) {
+        return (
+            <section className="mt-12 bg-white rounded-xl shadow-md p-6">
+                <div className="flex align-center border-b border-gray-200 pb-2 mb-4">
+                    <h2 className="text-xl font-bold text-gray-900">Reviews</h2>
+                </div>
+                <EmptyState />
+            </section>
+        )
+    }
+
+    const reviewsResponse = data.data
 
     return (
             <section className="mt-12 bg-white rounded-xl shadow-md p-6">
@@ -48,12 +69,14 @@ function ReviewsList() {
                     )}
                 </div>
 
-                <div className={'flex justify-center align-center'}>
+                <div className={'flex justify-center align-center mb-8'}>
                     <Pagination
                         currentPage={reviewsResponse.page}
                         totalPages={reviewsResponse.totalPages}
                     />
                 </div>
+
+                <AISummary mood={'reviews'} />
             </section>
     );
 }

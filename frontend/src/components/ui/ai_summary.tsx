@@ -12,14 +12,15 @@ function AISummary({ mood }: { mood: 'product' | 'reviews' }) {
     const [userRequested, setUserRequested] = useState(false);
 
     const {
-        data: analysis,
+        data: analysisData,
         error,
         isLoading,
         isValidating,
         mutate,
     } = useSWR(
         userRequested ? [`/AI/summary`, id, mood] : null,
-        ([url, productId, mood]) => apiClient.post(url, { productId, mood }).then((res) => res.data),
+        ([url, productId, mood]) =>
+            apiClient.post(url, { productId, mood }).then((res) => ({ data: res.data, status: res.status })),
         {
             revalidateOnFocus: false,
             shouldRetryOnError: false,
@@ -36,17 +37,15 @@ function AISummary({ mood }: { mood: 'product' | 'reviews' }) {
             );
         }
 
-        if (error) {
-            return (
-                <div className="text-red-500 rounded-md mt-4">Error retrieving analysis. Please try again.</div>
-            );
+        if (error || (analysisData && analysisData.status !== 200)) {
+            return <div className="text-red-500 rounded-md mt-4">Error retrieving analysis. Please try again.</div>;
         }
 
-        if (analysis) {
+        if (analysisData?.data) {
             return (
                 <div className="mt-4 p-4 bg-white rounded-md shadow-inner border border-gray-100">
                     <h4 className="font-medium text-blue-800 mb-2">AI analysis:</h4>
-                    <p className="text-gray-700 whitespace-pre-line">{analysis.summary}</p>
+                    <p className="text-gray-700 whitespace-pre-line">{analysisData.data.summary}</p>
                     <button onClick={() => mutate()} className="mt-3 text-sm text-blue-600 hover:text-blue-800 flex items-center">
                         <RefreshCw className="w-4 h-4 mr-1" />
                         Analysis update
@@ -61,15 +60,17 @@ function AISummary({ mood }: { mood: 'product' | 'reviews' }) {
     return (
         <div className="mt-4 bg-blue-50 rounded-lg p-4">
             <div className="flex flex-col justify-between items-center space-y-4 sm:flex-row sm:space-y-0">
-                <h3 className="text-md font-medium text-gray-800 sm:text-lg">{mood === 'reviews' ? 'Analysis and summary of comments' : 'Product analysis and summary'}</h3>
+                <h3 className="text-md font-medium text-gray-800 sm:text-lg">
+                    {mood === 'reviews' ? 'Analysis and summary of comments' : 'Product analysis and summary'}
+                </h3>
                 <button
                     onClick={() => {
-                        setUserRequested(true)
-                        mutate()
+                        setUserRequested(true);
+                        mutate();
                     }}
-                    disabled={isLoading || isValidating || analysis}
+                    disabled={isLoading || isValidating || analysisData?.data}
                     className={`flex items-center gap-2 px-4 py-2 rounded-md ${
-                        analysis ? 'bg-blue-100 text-blue-700 hover:bg-blue-200' : 'bg-blue-600 text-white hover:bg-blue-700'
+                        analysisData?.data ? 'bg-blue-100 text-blue-700 hover:bg-blue-200' : 'bg-blue-600 text-white hover:bg-blue-700'
                     } transition-colors`}
                 >
                     <Sparkles className="w-5 h-5" />
@@ -82,4 +83,4 @@ function AISummary({ mood }: { mood: 'product' | 'reviews' }) {
     );
 }
 
-export default AISummary
+export default AISummary;

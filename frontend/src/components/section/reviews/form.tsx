@@ -6,10 +6,11 @@ import * as yup from 'yup';
 import apiClient from 'src/utils/axios';
 import {useParams} from "next/navigation";
 import { mutate } from "swr";
+import {useState} from "react";
 
 const reviewSchema = yup.object({
     rating: yup.number()
-        .typeError()
+        .typeError('rating is a required field')
         .min(1)
         .max(5)
         .test(
@@ -26,27 +27,41 @@ const reviewSchema = yup.object({
 
 function ReviewForm() {
     const {id: productId} = useParams()
+    const [mainError, setMainError] = useState(null)
 
     const {
         register,
         handleSubmit,
         formState: { errors, isSubmitting},
         reset,
+        setError
     } = useForm({
         resolver: yupResolver(reviewSchema),
     });
 
     const onSubmit = async (data) => {
-        await apiClient.post(`/products/${productId}/reviews`, data);
-        reset();
-        mutate(`/products/${productId}/reviews`)
-        mutate(`/products/${productId}`)
+        const result: any = await apiClient.post(`/products/${productId}/reviews`, data);
+
+        if(result.status === 201) {
+            reset();
+            mutate(`/products/${productId}/reviews`)
+        } else if(result.status === 400) {
+            const apiErrors = result.response.data.errors
+            Object.keys(apiErrors).forEach((key: any) => {
+                setError(key, { message: apiErrors[key].msg })
+            })
+        } else {
+            const apiError = result.response.data.error
+            setMainError(apiError.message)
+        }
+
     };
 
     return (
         <section className="mt-12 bg-white rounded-xl shadow-md p-6">
-            <div className="flex align-center border-b border-gray-200 pb-2 mb-4">
+            <div className="flex flex-col align-center border-b border-gray-200 pb-2 mb-4">
                 <h2 className="text-xl font-bold text-gray-900">Write your feedback</h2>
+                {mainError && <p className="text-red-500 text-sm mt-1">{mainError}</p>}
             </div>
 
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
