@@ -6,6 +6,7 @@ import Image from "next/image";
 import ReviewsList from "src/components/section/reviews/list";
 import ReviewForm from "src/components/section/reviews/form";
 import Rating from "src/components/ui/rating";
+import AISummary from "src/components/ui/ai_summary";
 
 export default async function ProductPage({ params, searchParams }) {
     const { id } = await params;
@@ -69,10 +70,10 @@ export default async function ProductPage({ params, searchParams }) {
                         </div>
                     </div>
                 </div>
-                {/*TODO: ai*/}
+                <AISummary mood={'product'} />
 
                 <ReviewsList />
-                {/*TODO: ai*/}
+                <AISummary mood={'reviews'} />
 
                 <ReviewForm />
             </main>
