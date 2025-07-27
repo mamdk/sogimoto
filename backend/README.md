@@ -68,4 +68,3 @@ Create `.env` file like `.env.example`
 ## 📄 License
 
 MIT Licensed. See [LICENSE](https://github.com/mamdk/sogimoto/blob/main/LICENSE) file.
-```
