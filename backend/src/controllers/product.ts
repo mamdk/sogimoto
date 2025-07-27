@@ -4,6 +4,7 @@ import getProduct from "../utils/get_product";
 import supabase from "../config/db";
 import reviewValidator from "../validator/review";
 import updateProductRating from "../utils/update_product_raating";
+import pagination from "src/utils/pagination";
 
 export async function product(req: Request, res: Response, next: NextFunction) {
     try {
@@ -19,15 +20,9 @@ export async function product(req: Request, res: Response, next: NextFunction) {
 
 export async function products(req: Request, res: Response, next: NextFunction) {
     try {
-        const { page = '1', limit = '10' } = req.query;
+        const { page, limit } = req.query;
 
-        const pageNumber = parseInt(page as string, 10);
-        const limitNumber = parseInt(limit as string, 10);
-        const offset = (pageNumber - 1) * limitNumber;
-
-        if(isNaN(pageNumber) || isNaN(limitNumber)) {
-            generateError('Bad Request', 400, 'BAD_REQUEST')
-        }
+        const {offset, limitNumber, pageNumber} = pagination(page.toString(), limit.toString())
 
         const { data: products, error, count } = await supabase
             .from('products')
@@ -55,13 +50,7 @@ export async function reviews(req: Request, res: Response, next: NextFunction) {
         const { id } = req.params;
         const { page = '1', limit = '10' } = req.query;
 
-        const pageNumber = parseInt(page as string, 10);
-        const limitNumber = parseInt(limit as string, 10);
-        const offset = (pageNumber - 1) * limitNumber;
-
-        if(isNaN(pageNumber) || isNaN(limitNumber)) {
-            generateError('Bad Request', 400, 'BAD_REQUEST')
-        }
+        const {offset, limitNumber, pageNumber} = pagination(page.toString(), limit.toString())
 
         const { data: reviews, error, count } = await supabase
             .from('product_reviews')
