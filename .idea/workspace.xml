@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d8462981-24b7-4b4e-8c2d-89a5df75fa7f" name="Changes" comment="fix: bugs and config build">
+    <list default="true" id="d8462981-24b7-4b4e-8c2d-89a5df75fa7f" name="Changes" comment="fix: build orders in package.json">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/middlewares/error_handler.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/middlewares/error_handler.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +43,7 @@
     "nodejs_interpreter_path": "/home/mhmk/.nvm/versions/node/v22.13.1/bin/node",
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "settings.nodejs",
-    "ts.external.directory.path": "/home/mhmk/projects/hiring/sogimoto/frontend/node_modules/typescript/lib",
+    "ts.external.directory.path": "/home/mhmk/projects/hiring/sogimoto/backend/node_modules/typescript/lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -68,7 +68,7 @@
       <workItem from="1753483368089" duration="890000" />
       <workItem from="1753522144581" duration="11698000" />
       <workItem from="1753550455923" duration="9601000" />
-      <workItem from="1753604015171" duration="5091000" />
+      <workItem from="1753604015171" duration="5576000" />
     </task>
     <task id="LOCAL-00001" summary="feat: review list">
       <option name="closed" value="true" />
@@ -190,7 +190,15 @@
       <option name="project" value="LOCAL" />
       <updated>1753609077162</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="fix: build orders in package.json">
+      <option name="closed" value="true" />
+      <created>1753609233198</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1753609233198</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -212,6 +220,7 @@
     <MESSAGE value="fix: pagination" />
     <MESSAGE value="fix: build errors" />
     <MESSAGE value="fix: bugs and config build" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: bugs and config build" />
+    <MESSAGE value="fix: build orders in package.json" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: build orders in package.json" />
   </component>
 </project>

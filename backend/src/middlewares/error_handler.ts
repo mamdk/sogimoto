@@ -9,7 +9,8 @@ function errorHandler(err, req, res, next) {
     };
 
     if (process.env.APP_ENV === 'development') {
-        console.error(err, response, err.stack);
+        console.log(`${req.method.toUpperCase()} :: ${req.path}`)
+        console.error({err, response});
     }
 
     return res.status(statusCode).json(response);
