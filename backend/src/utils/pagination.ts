@@ -6,7 +6,7 @@ interface Pagination {
     pageNumber: number;
 }
 
-function pagination(page: string = '1', limit: string = '10'): Pagination {
+function pagination(page: string | any = '1', limit: string | any = '10'): Pagination {
     const pageNumber = parseInt(page as string, 10);
     const limitNumber = parseInt(limit as string, 10);
     const offset = (pageNumber - 1) * limitNumber;

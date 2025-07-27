@@ -22,7 +22,7 @@ export async function products(req: Request, res: Response, next: NextFunction) 
     try {
         const { page, limit } = req.query;
 
-        const {offset, limitNumber, pageNumber} = pagination(page.toString(), limit.toString())
+        const {offset, limitNumber, pageNumber} = pagination(page, limit)
 
         const { data: products, error, count } = await supabase
             .from('products')
@@ -50,7 +50,7 @@ export async function reviews(req: Request, res: Response, next: NextFunction) {
         const { id } = req.params;
         const { page = '1', limit = '10' } = req.query;
 
-        const {offset, limitNumber, pageNumber} = pagination(page.toString(), limit.toString())
+        const {offset, limitNumber, pageNumber} = pagination(page, limit)
 
         const { data: reviews, error, count } = await supabase
             .from('product_reviews')
