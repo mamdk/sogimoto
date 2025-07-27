@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d8462981-24b7-4b4e-8c2d-89a5df75fa7f" name="Changes" comment="feat: .env.prod file">
-      <change afterPath="$PROJECT_DIR$/backend/README.md" afterDir="false" />
+    <list default="true" id="d8462981-24b7-4b4e-8c2d-89a5df75fa7f" name="Changes" comment="feat: README.md">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/backend/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,7 +34,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/home/mhmk/projects/hiring/sogimoto/backend/build",
+    "last_opened_file_path": "/home/mhmk/projects/hiring/sogimoto/frontend",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.standard": "true",
     "node.js.detected.package.tslint": "true",
@@ -49,9 +50,9 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/frontend" />
       <recent name="$PROJECT_DIR$/backend/build" />
       <recent name="$PROJECT_DIR$/frontend/src/context" />
-      <recent name="$PROJECT_DIR$/frontend" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/frontend/src/app" />
@@ -68,7 +69,7 @@
       <workItem from="1753483368089" duration="890000" />
       <workItem from="1753522144581" duration="11698000" />
       <workItem from="1753550455923" duration="9601000" />
-      <workItem from="1753604015171" duration="6780000" />
+      <workItem from="1753604015171" duration="8001000" />
     </task>
     <task id="LOCAL-00001" summary="feat: review list">
       <option name="closed" value="true" />
@@ -214,7 +215,15 @@
       <option name="project" value="LOCAL" />
       <updated>1753610023422</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="feat: README.md">
+      <option name="closed" value="true" />
+      <created>1753610828764</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1753610828764</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -239,6 +248,7 @@
     <MESSAGE value="fix: build orders in package.json" />
     <MESSAGE value="fix: error log" />
     <MESSAGE value="feat: .env.prod file" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: .env.prod file" />
+    <MESSAGE value="feat: README.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: README.md" />
   </component>
 </project>
