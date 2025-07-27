@@ -4,12 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d8462981-24b7-4b4e-8c2d-89a5df75fa7f" name="Changes" comment="feat: add auth context">
-      <change afterPath="$PROJECT_DIR$/backend/src/utils/pagination.ts" afterDir="false" />
+    <list default="true" id="d8462981-24b7-4b4e-8c2d-89a5df75fa7f" name="Changes" comment="fix: pagination">
+      <change afterPath="$PROJECT_DIR$/backend/esbuild.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/app.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/app.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/config/ai.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/config/ai.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/controllers/product.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/controllers/product.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/error.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/error.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/products/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/products/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/section/reviews/form.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/section/reviews/form.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/section/reviews/list.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/section/reviews/list.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/ui/empty_state.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ui/empty_state.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/context/auth.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/context/auth.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +76,7 @@
       <workItem from="1753483368089" duration="890000" />
       <workItem from="1753522144581" duration="11698000" />
       <workItem from="1753550455923" duration="9601000" />
-      <workItem from="1753604015171" duration="609000" />
+      <workItem from="1753604015171" duration="2049000" />
     </task>
     <task id="LOCAL-00001" summary="feat: review list">
       <option name="closed" value="true" />
@@ -168,7 +174,15 @@
       <option name="project" value="LOCAL" />
       <updated>1753562963820</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="fix: pagination">
+      <option name="closed" value="true" />
+      <created>1753604668052</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1753604668052</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -187,6 +201,7 @@
     <MESSAGE value="fix: handle all errors" />
     <MESSAGE value="fix: README.md" />
     <MESSAGE value="feat: add auth context" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: add auth context" />
+    <MESSAGE value="fix: pagination" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: pagination" />
   </component>
 </project>

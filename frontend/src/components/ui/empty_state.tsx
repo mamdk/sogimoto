@@ -1,4 +1,4 @@
-import { ClipboardList, Frown } from 'lucide-react';
+import { ClipboardList } from 'lucide-react';
 import Link from 'next/link';
 
 interface EmptyStateProps {

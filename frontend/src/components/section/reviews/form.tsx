@@ -7,6 +7,7 @@ import apiClient from 'src/utils/axios';
 import {useParams} from "next/navigation";
 import { mutate } from "swr";
 import {useState} from "react";
+import {AxiosResponse} from "axios";
 
 const reviewSchema = yup.object({
     rating: yup.number()
@@ -40,14 +41,14 @@ function ReviewForm() {
     });
 
     const onSubmit = async (data) => {
-        const result: any = await apiClient.post(`/products/${productId}/reviews`, data);
+        const result: AxiosResponse & Record<string, AxiosResponse> = await apiClient.post(`/products/${productId}/reviews`, data);
 
         if(result.status === 201) {
             reset();
             mutate(`/products/${productId}/reviews`)
         } else if(result.status === 400) {
             const apiErrors = result.response.data.errors
-            Object.keys(apiErrors).forEach((key: any) => {
+            Object.keys(apiErrors).forEach((key: 'comment' | 'rating') => {
                 setError(key, { message: apiErrors[key].msg })
             })
         } else {

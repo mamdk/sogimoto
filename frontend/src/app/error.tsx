@@ -1,6 +1,6 @@
 "use client"
 
-import { AlertTriangle, Home, RefreshCw } from 'lucide-react';
+import { AlertTriangle, Home } from 'lucide-react';
 import Link from 'next/link';
 
 interface ErrorPageProps {

@@ -7,7 +7,6 @@ import {useParams, useSearchParams} from "next/navigation";
 import Loading from "src/app/loading";
 import Rating from "src/components/ui/rating";
 import EmptyState from "src/components/ui/empty_state";
-import Error from "src/app/error";
 import AISummary from "src/components/ui/ai_summary";
 
 function ReviewsList() {

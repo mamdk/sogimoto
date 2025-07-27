@@ -1,6 +1,6 @@
 "use client"
 
-import {notFound, useSearchParams} from 'next/navigation';
+import {useSearchParams} from 'next/navigation';
 import apiClient from "src/utils/axios";
 import ProductCard from "src/components/ui/product_card";
 import Pagination from "src/components/ui/pagination";
