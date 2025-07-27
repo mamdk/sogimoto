@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d8462981-24b7-4b4e-8c2d-89a5df75fa7f" name="Changes" comment="fix: error log">
+    <list default="true" id="d8462981-24b7-4b4e-8c2d-89a5df75fa7f" name="Changes" comment="feat: .env.prod file">
+      <change afterPath="$PROJECT_DIR$/backend/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +68,7 @@
       <workItem from="1753483368089" duration="890000" />
       <workItem from="1753522144581" duration="11698000" />
       <workItem from="1753550455923" duration="9601000" />
-      <workItem from="1753604015171" duration="5976000" />
+      <workItem from="1753604015171" duration="6780000" />
     </task>
     <task id="LOCAL-00001" summary="feat: review list">
       <option name="closed" value="true" />
@@ -206,7 +206,15 @@
       <option name="project" value="LOCAL" />
       <updated>1753609921190</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="feat: .env.prod file">
+      <option name="closed" value="true" />
+      <created>1753610023422</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1753610023422</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -230,6 +238,7 @@
     <MESSAGE value="fix: bugs and config build" />
     <MESSAGE value="fix: build orders in package.json" />
     <MESSAGE value="fix: error log" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: error log" />
+    <MESSAGE value="feat: .env.prod file" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: .env.prod file" />
   </component>
 </project>
